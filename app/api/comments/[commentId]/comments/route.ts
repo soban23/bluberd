@@ -36,7 +36,7 @@ export const GET = async (req: Request, context:any) => {
 
 
 // @ts-ignore - Vercel fails on this context typing
-export const POST = async (req: Request, context:{params:{commentId: string}}) => {
+export const POST = async (req: Request, context:any) => {
     try {
 
         const session = await getServerSession(authOptions);
