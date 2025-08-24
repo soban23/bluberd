@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/authOptions';
 
 // @ts-ignore - Vercel fails on this context typing
-export const GET = async (req: Request, context:{params:{commentId: string}}) => {
+export const GET = async (req: Request, context:any) => {
     try {
 
         const session = await getServerSession(authOptions);
