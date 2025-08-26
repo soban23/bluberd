@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/authOptions';
 
 
-export const GET = async (req: Request, context:{params:{postId: string}}) => {
+export const GET = async (req: Request, context:any) => {
     try {
 
         const session = await getServerSession(authOptions);

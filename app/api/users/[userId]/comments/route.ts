@@ -4,7 +4,7 @@ import { authOptions } from '@/lib/authOptions';
 
 
 
-export const GET = async (req: Request, context:{params:{userId: string}}) => {
+export const GET = async (req: Request, context:any) => {
     try {
 
         const session = await getServerSession(authOptions);

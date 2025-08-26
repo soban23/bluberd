@@ -2,7 +2,7 @@ import { createComment, getCommentsOfCommentLead } from '@/lib/db/comments';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/authOptions';
 
-// @ts-ignore - Vercel fails on this context typing
+
 export const GET = async (req: Request, context:any) => {
     try {
 
@@ -34,8 +34,6 @@ export const GET = async (req: Request, context:any) => {
 
 
 
-
-// @ts-ignore - Vercel fails on this context typing
 export const POST = async (req: Request, context:any) => {
     try {
 

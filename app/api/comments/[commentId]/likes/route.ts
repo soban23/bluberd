@@ -2,9 +2,10 @@ import { getLikesByCommentId } from '@/lib/db/likes';
 import {  deleteLikeByCommentId } from '@/lib/db/likes';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/authOptions';
+import { NextRequest } from 'next/server';
 
 
-export const GET = async (req: Request, context:{params:{commentId: string}}) => {
+export const GET = async (req: NextRequest,context:any) => {
     try {
 
         const session = await getServerSession(authOptions);
@@ -45,7 +46,7 @@ export const GET = async (req: Request, context:{params:{commentId: string}}) =>
 
 
 
-export const DELETE = async (req: Request, context:{params:{commentId:string}}) => {
+export const DELETE = async (req: NextRequest,context:any) => {
     try {
 
         const session = await getServerSession(authOptions);

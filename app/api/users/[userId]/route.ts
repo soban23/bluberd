@@ -4,7 +4,7 @@ import { authOptions } from '@/lib/authOptions';
 
 
 
-export const GET = async (req: Request, context: { params: { userId: string } }) => {
+export const GET = async (req: Request, context:any) => {
     try {
         const { userId } = await context.params;
         if (!userId) {
@@ -21,7 +21,7 @@ export const GET = async (req: Request, context: { params: { userId: string } })
 
 };
 
-export const PUT = async (req: Request, context: { params: { userId: string } }) => {
+export const PUT = async (req: Request, context:any) => {
     try {
         // console.log('Headers:', JSON.stringify(Object.fromEntries(req.headers.entries())));
         // const cookies = req.headers.get('cookie');
@@ -67,7 +67,7 @@ export const PUT = async (req: Request, context: { params: { userId: string } })
 
 };
 
-export const DELETE = async (req: Request, context: { params: { userId: string } }) => {
+export const DELETE = async (req: Request, context:any) => {
     try {
         const { userId } = await context.params;
         const session = await getServerSession(authOptions);

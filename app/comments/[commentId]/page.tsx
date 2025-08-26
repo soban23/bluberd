@@ -10,9 +10,9 @@ import { useParams } from 'next/navigation';
 const ShowPost = dynamic(() => import('@/components/showPost'), {
   // loading: () => <p>Loading  post...</p>,
 });
-const ShowComments = dynamic(() => import('@/components/showComments'), {
-  // loading: () => <p>Loading Comments...</p>,
-});
+// const ShowComments = dynamic(() => import('@/components/showComments'), {
+//   // loading: () => <p>Loading Comments...</p>,
+// });
 const CommentBox = dynamic(() => import('@/components/commentBox'), {
   // loading: () => <p>Loading...</p>,
 });

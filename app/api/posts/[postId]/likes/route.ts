@@ -4,7 +4,7 @@ import { authOptions } from '@/lib/authOptions';
 import { supabase } from '@/lib/supabaseClient';
 
 
-export const GET = async (req: Request, context: { params: { postId: string } }) => {
+export const GET = async (req: Request, context:any) => {
     try {
 
         const session = await getServerSession(authOptions);
@@ -42,7 +42,7 @@ export const GET = async (req: Request, context: { params: { postId: string } })
 
 
 
-export const DELETE = async (req: Request, context: { params: { postId: string } }) => {
+export const DELETE = async (req: Request, context:any) => {
     try {
 
         const session = await getServerSession(authOptions);

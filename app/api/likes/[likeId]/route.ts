@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/authOptions';
 
 
-export const DELETE = async (req: Request, context:{params:{likeId:string}}) => {
+export const DELETE = async (req: Request, context:any) => {
     try {
 
         const session = await getServerSession(authOptions);

@@ -18,7 +18,7 @@ import {
 //   return NextResponse.json(messages)
 // }
 
-export async function GET(req: NextRequest, context: { params: { conversationId: string } }) {
+export async function GET(req: NextRequest,context:any) {
   const { conversationId } = await context.params;
   const before = req.nextUrl.searchParams.get('before');
 
@@ -31,7 +31,7 @@ export async function GET(req: NextRequest, context: { params: { conversationId:
 }
 
 
-export async function POST(req: NextRequest,context: { params: { conversationId: string } }) {
+export async function POST(req: NextRequest,context:any) {
   const session = await getServerSession(authOptions)
   if (!session?.user.id) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest,context: { params: { conversationId:
   return NextResponse.json(msg)
 }
 
-export async function DELETE(req: NextRequest,context: { params: { conversationId: string } }) {
+export async function DELETE(req: NextRequest,context:any) {
   const session = await getServerSession(authOptions)
   if (!session?.user.id) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 

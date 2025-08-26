@@ -3,7 +3,7 @@ import { getPostsByUserId} from '@/lib/db/posts';
 
 
 
-export const GET = async (req: Request, context: { params: { userId: string } }) => {
+export const GET = async (req: Request, context:any) => {
     try {
         const {userId } = await context.params;
         // console.log(authorId);

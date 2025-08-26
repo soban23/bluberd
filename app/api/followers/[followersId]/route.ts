@@ -5,7 +5,7 @@ import { authOptions } from '@/lib/authOptions';
 
 
 //deleting followers
-export const DELETE = async (req: Request, context:{params:{followersId: string}}) => {
+export const DELETE = async (req: Request, context:any) => {
     try {
 
         const session = await getServerSession(authOptions);
