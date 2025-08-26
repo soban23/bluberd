@@ -88,7 +88,7 @@ export default function PostCard({
     onClick={onClick}
     className="relative rounded-md overflow-hidden border cursor-pointer border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 max-w-full sm:max-w-[350px] md:max-w-[400px] lg:max-w-[500px] mx-auto"
   >
-    <Image
+    <img
       src={image}
       alt="post image"
       width={600}
