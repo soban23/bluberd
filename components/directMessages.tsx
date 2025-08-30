@@ -451,7 +451,7 @@ export default function Messages({ conversationId }: Props) {
     ) : (
       <div className="flex flex-col h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
         <div ref={scrollRef} className="flex-1 overflow-y-auto">
-          <div className="h-full overflow-y-auto pb-16 px-2">
+          <div className="h-full overflow-y-auto pb-20 px-2">
             <ChatMessageList>
               {scrollLoading ? (
                 <div className="bg-zinc-300 dark:bg-zinc-700 h-6 w-full flex items-center justify-center">

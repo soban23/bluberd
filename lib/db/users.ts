@@ -14,7 +14,7 @@ export async function getUserByEmail(email: string) {
     throw error
   }
 
-  return data ? [data] : []
+  return data ? data : null
 }
 
 
@@ -148,7 +148,7 @@ export async function createUser(username: string, email: string, pfp: string, n
     .insert({ username, email, pfp, name })
     .select()
   if (error) throw error
-  return data
+  return data[0]
 }
 
 // ✅ Update user

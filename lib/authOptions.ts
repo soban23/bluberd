@@ -12,13 +12,14 @@ declare module 'next-auth' {
             email?: string | null;
             image?: string | null;
             id?: string | null;
-            
+
 
         };
     }
     interface User {
         id?: string;
         username?: string;
+
     }
 
     interface JWT {
@@ -27,6 +28,20 @@ declare module 'next-auth' {
     }
 }
 
+interface UserDb {
+    id?: string;
+    username?: string;
+    name?: string;
+    email?: string;
+    pfp?: string;
+
+}
+
+function generateUniqueUsername(name?: string | null): string {
+    const randomNum = Math.floor(1000 + Math.random() * 9000); 
+    const baseName = name?.replace(/\s+/g, "").toLowerCase();   
+    return `${baseName}${randomNum}`;
+}
 
 export const authOptions: NextAuthOptions = {
     providers: [
@@ -38,13 +53,15 @@ export const authOptions: NextAuthOptions = {
 
     ],
     pages: {
-        signIn: "/signin",
+        signIn: "/",
     },
     callbacks: {
         async signIn({ user }) {
 
             try {
-                let dbUser = await getUserByEmail(user.email as string);
+                console.log('1')
+                let dbUser: UserDb = await getUserByEmail(user.email as string);
+                console.log(dbUser)
 
 
 
@@ -53,15 +70,15 @@ export const authOptions: NextAuthOptions = {
                     //convert string tp bytea
                     //const imageBuffer = await imageUrlToBuffer(user.image!);
 
-                    dbUser = await createUser(username as any, user.email as string, user.image as string , user.name as string);
+                    dbUser = await createUser(generateUniqueUsername(user.name) as string, user.email as string, user.image as string, user.name as string);
 
                 }
                 // console.log(user.sub);
                 console.log(dbUser);
-                user.id = dbUser[0].id;
-                user.name = dbUser[0].name;
-                user.username = dbUser[0].username;
-                user.image = dbUser[0].pfp;
+                user.id = dbUser.id;
+                user.name = dbUser.name;
+                user.username = dbUser.username;
+                user.image = dbUser.pfp;
 
                 //convert bytea to string
                 // const base64 = dbUser.pfp.toString('base64');

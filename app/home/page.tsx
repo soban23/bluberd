@@ -39,22 +39,12 @@ const PopularPosts = dynamic(() => import('@/components/popularPosts'), {
 });
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<'following' | 'popular'>('following');
+  const [activeTab, setActiveTab] = useState<'following' | 'popular'>('popular');
 
   return (
     <div className="max-w-xl mx-auto px-4 mt-4">
       {/* Tabs */}
       <div className="flex border-b border-gray-300 mb-2">
-        <button
-          onClick={() => setActiveTab('following')}
-          className={`w-1/2 text-center py-2 font-medium transition-colors ${
-            activeTab === 'following'
-              ? 'border-b-2 border-blue-500 text-blue-600'
-              : 'text-gray-500 hover:text-blue-500'
-          }`}
-        >
-          Following
-        </button>
         <button
           onClick={() => setActiveTab('popular')}
           className={`w-1/2 text-center py-2 font-medium transition-colors ${
@@ -65,16 +55,28 @@ export default function Home() {
         >
           Popular
         </button>
+        <button
+          onClick={() => setActiveTab('following')}
+          className={`w-1/2 text-center py-2 font-medium transition-colors ${
+            activeTab === 'following'
+              ? 'border-b-2 border-blue-500 text-blue-600'
+              : 'text-gray-500 hover:text-blue-500'
+          }`}
+        >
+          Following
+        </button>
+        
       </div>
 
       {/* Content */}
       <div>
-        <div className={activeTab === 'following' ? 'block' : 'hidden'}>
-          <FollowingPosts typeOfPosts="following" />
-        </div>
         <div className={activeTab === 'popular' ? 'block' : 'hidden'}>
           <FollowingPosts typeOfPosts="popular" />
         </div>
+        <div className={activeTab === 'following' ? 'block' : 'hidden'}>
+          <FollowingPosts typeOfPosts="following" />
+        </div>
+        
       </div>
     </div>
   );

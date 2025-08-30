@@ -144,11 +144,11 @@ export default function Profile({ userId }: Props) {
       user && (
         <>
           <div className="flex items-center gap-4 mb-4">
-            <Image
-              priority
+            <img
+              
               src={
                 user.pfp ??
-                "https://ecpwdbjgvnlmvcbwburq.supabase.co/storage/v1/object/public/avatars/pfp.png"
+                "ecpwdbjgvnlmvcbwburq.supabase.co/storage/v1/object/public/avatars/pfp.png"
               }
               alt="Profile"
               width={100}

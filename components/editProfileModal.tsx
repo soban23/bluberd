@@ -112,7 +112,7 @@ export default function EditProfileModal({ isOpen, onClose, user, onSave }: Prop
 
       {/* Avatar with "+" button overlay */}
       <div className="relative w-24 h-24 mx-auto mb-4">
-        <Image
+        <img
           src={previewURL}
           alt="Avatar Preview"
           width={100}
@@ -148,7 +148,7 @@ export default function EditProfileModal({ isOpen, onClose, user, onSave }: Prop
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Username</label>
           <input
-            value={username}
+            value={username ?? ""}
             onChange={(e) => setUsername(e.target.value)}
             className="w-full border border-gray-300 dark:border-gray-700 px-3 py-2 rounded mt-1 dark:bg-gray-800 dark:text-white"
           />
@@ -156,7 +156,7 @@ export default function EditProfileModal({ isOpen, onClose, user, onSave }: Prop
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Bio</label>
           <textarea
-            value={bio}
+            value={bio ?? ""}
             onChange={(e) => setBio(e.target.value)}
             className="w-full border border-gray-300 dark:border-gray-700 px-3 py-2 rounded mt-1 dark:bg-gray-800 dark:text-white"
             rows={3}
