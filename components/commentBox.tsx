@@ -35,7 +35,7 @@ export default function CommentBox({
 
             setLoadingSpin(false)
 
-        }, 7000);
+        }, 3000);
 
 
     }, [])
