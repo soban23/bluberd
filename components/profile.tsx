@@ -64,6 +64,7 @@ export default function Profile({ userId }: Props) {
             const res = await fetch(`/api/followings/${userId}`);
             const data = await res.json();
             if (data?.length !== 0) setFollowed(true);
+            console.log(data,'followerd',followed)
         } catch (error) {
             console.error('Failed to check followings', error);
         }

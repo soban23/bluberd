@@ -9,8 +9,22 @@ import { usePathname } from 'next/navigation';
 
 
 import { MessageCirclePlus } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+import { signIn, useSession, signOut } from 'next-auth/react'
+
 
 export default function FloatingCreatePostButton() {
+   const { data: session, status } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (status === 'loading') return; 
+    if (!session) {
+      router.push('/'); 
+    }
+  }, [session, status, router]);
+
     const pathname = usePathname();
     const isHidden = pathname === '/' ||pathname.startsWith('/conversation');
   

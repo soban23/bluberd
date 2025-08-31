@@ -140,6 +140,7 @@ export default function Messages({ conversationId }: Props) {
                         console.log(payload)
                         let message = payload.new as Message;
                         message.message_id = payload.new.id;
+                        message.attachment = payload.new.attachment_url;
 
                         console.log('message-->', message)
 
