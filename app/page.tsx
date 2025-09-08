@@ -1,69 +1,53 @@
-'use client'
+"use client";
 
-import { signIn, useSession, signOut } from 'next-auth/react'
-import { useEffect, useState } from 'react'
-import spinner from '@/src/components/ui/chat/spinner'
-import Spinner from '@/src/components/ui/chat/spinner'
+import { signIn, useSession, signOut } from "next-auth/react";
+import { useEffect, useState } from "react";
+import Spinner from "@/src/components/ui/chat/spinner";
 
 export default function LoginPage() {
-  const { data: session } = useSession()
-  const [loading, setLoading]=useState<boolean>(true)
-  // Redirect if already logged in
+  const { data: session } = useSession();
+  const [loading, setLoading] = useState<boolean>(true);
+
   useEffect(() => {
-    
     if (session) {
-      window.location.href = '/home'
+      window.location.href = "/home";
     }
-    setLoading(false)
-  }, [session])
+    setLoading(false);
+  }, [session]);
 
   return (
     <>
-    {loading ?(
-      <div className="flex items-center justify-center">
-        <Spinner></Spinner>
-      </div>
-    ):(
-      <>
-        
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
-      <div className="max-w-sm border border-gray-700 w-full bg-gray-900 rounded-xl shadow-lg p-8">
-        <div className="text-white text-2xl font-semibold text-center mb-6">Welcome </div>
-        {/* <img
-        src="/bluberd.png" // Make sure you have this logo in your `public` folder
-        alt="bluberd logo"
-        className="w-[12px] h-[12px]"
-      /> */}
+      {loading ? (
+        <div className="flex items-center justify-center">
+          <Spinner></Spinner>
+        </div>
+      ) : (
+        <>
+          <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
+            <div className="max-w-sm border border-gray-700 w-full bg-gray-900 rounded-xl shadow-lg p-8">
+              <div className="text-white text-2xl font-semibold text-center mb-6">
+                Welcome{" "}
+              </div>
 
-        <button
-          onClick={() => signIn('google')}
-          className="w-full bg-white text-gray-800 py-2 px-4 rounded-full flex items-center justify-center gap-3 hover:bg-gray-100 transition duration-200"
-        >
-          
-          <GoogleIcon />
-          <span className="font-medium">Sign in with Google</span>
-        </button>
+              <button
+                onClick={() => signIn("google")}
+                className="w-full bg-white text-gray-800 py-2 px-4 rounded-full flex items-center justify-center gap-3 hover:bg-gray-100 transition duration-200"
+              >
+                <GoogleIcon />
+                <span className="font-medium">Sign in with Google</span>
+              </button>
 
-         {/* <button
-          onClick={() => signOut()}
-          className="w-full bg-white text-gray-800 py-2 px-4 rounded-full flex items-center justify-center gap-3 hover:bg-gray-100 transition duration-200"
-        >
-          
-          <span className="font-medium">Sign out with Google</span>
-        </button> */}
-
-        <p className="text-center text-sm text-gray-400 mt-6">
-          Powered by Google Login
-        </p>
-      </div>
-    </div>
-      </>
-    )}
+              <p className="text-center text-sm text-gray-400 mt-6">
+                Powered by Google Login
+              </p>
+            </div>
+          </div>
+        </>
+      )}
     </>
-  )
+  );
 }
 
-// SVG Google Logo Component
 function GoogleIcon() {
   return (
     <svg
@@ -88,5 +72,5 @@ function GoogleIcon() {
         fill="#EA4335"
       />
     </svg>
-  )
+  );
 }

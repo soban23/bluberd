@@ -64,7 +64,7 @@
 //     },[])
 
 //     const fetchComments = async () => {
-//         setLoading(true); // 🟡 Start loading
+//         setLoading(true); //  Start loading
 //         try {
 //             const res = await fetch(`/api/posts/${postId}/comments/`);
 //             const data = await res.json();
@@ -73,7 +73,7 @@
 //         } catch (error) {
 //             console.error('Failed to fetch comments', error);
 //         } finally {
-//             setLoading(false); // 🟢 Done loading
+//             setLoading(false); //  Done loading
 //             console.log(comments);
 
 //         }
@@ -110,10 +110,9 @@
 //             numberofcomments: 0,
 //         };
 
-//         // 🟢 Put new comment at index 0
+//         //  Put new comment at index 0
 //         setComments((prev) => [newComment, ...prev]);
 //     };
-
 
 //     return (
 
@@ -144,6 +143,3 @@
 //         </div>
 //     )
 // }
-
-
-
