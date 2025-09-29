@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bluberd 🐦
 
-## Getting Started
+👉🏼 https://bluberd.vercel.app
 
-First, run the development server:
+Bluberd is a Twitter-style social media clone built with Next.js and powered by Supabase for authentication, database, storage, and realtime features.
+It supports posting, following, chat messaging, and media uploads — all wrapped in a responsive UI styled with shadcn/ui.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📸 Screenshots
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Here are a few screenshots from the live UI:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| View | Screenshot |
+|------|------------|
+| Login / Register | ![Auth view](./public/login.png) |
+| Home | ![Home view](./public/popular.png) |
+| Search User | ![Search view](./public/search.png) |
+| Post | ![Post view](./public/post.png) |
+| New post | ![NewPost view](./public/newpost.png) |
+| Conversations | ![Conversations view](./public/conversations.png) |
+| Messages | ![Messages view](./public/messages.png) |
+| Profile | ![Profile view](./public/othersprofile.png) |
+| Edit | ![Edit view](./public/editprofile.png) |
+| LikesModal | ![LikesModal view](./public/likesmodal.png) |
+| Image | ![Image view](./public/imagemodal.png) |
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+—
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Tech Stack
+-  Frontend: Next.js + React
+-  UI Library: shadcn/ui (Radix + Tailwind components)
+-  Backend / Database: Supabase (PostgreSQL, Realtime, Storage)
+-  Auth: Google OAuth
+-  Media: Supabase Storage for image uploads
+-  Realtime: Supabase Realtime for chat + feed updates
+-  Deployment: Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Features
 
-## Deploy on Vercel
+- Google Authentication
+- Create and view posts (with text + image upload)
+- Like / Unlike / comment -> posts / comments
+- Follow / unfollow users  
+- Search users by username
+- Realtime chat messaging (Supabase Realtime)
+- Paginated messages for smooth infinite scroll in chat  
+- Image uploads and preview support (posts & messages)  
+- Fully responsive UI with shadcn/ui components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+—
+  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
